@@ -1,16 +1,16 @@
-import Day from "../Day/Day";
+import Day from '../Day/Day';
 
 const Week = () => {
-    return (
-        <>
-            <Day />
-            <Day />
-            <Day />
-            <Day />
-            <Day />
-            <Day />
-        </>
-    );
-}
+  return (
+    <>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+      <Day/>
+    </>
+  );
+};
 
 export default Week;
