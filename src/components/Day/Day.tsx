@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import useModal from '../Modal/useModal';
-import './Day.css';
+import './Day.scss';
 
 type Info = {
     subject: string,

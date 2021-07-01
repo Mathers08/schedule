@@ -1,6 +1,6 @@
 import React from 'react';
 import {createPortal} from 'react-dom';
-import './Modal.css';
+import './Modal.scss';
 
 interface ModalProps {
   isShowing: boolean,
