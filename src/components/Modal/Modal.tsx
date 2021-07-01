@@ -2,36 +2,58 @@ import React from 'react';
 import {createPortal} from 'react-dom';
 import './Modal.css';
 
-const Modal = (props) => {
+interface ModalProps {
+  isShowing: boolean,
+  subject: string,
+  office: string,
+  teacher: string,
+  hide: (v: any) => void,
+  subjectChange: (v: any) => void,
+  officeChange: (v: any) => void,
+  teacherChange: (v: any) => void,
+  handleSubmit: (v: any) => void,
+}
+
+const Modal = ({
+  isShowing,
+  subject,
+  office,
+  teacher,
+  hide,
+  subjectChange,
+  officeChange,
+  teacherChange,
+  handleSubmit,
+} : ModalProps) => {
     return createPortal(
         <React.Fragment>
             <div className="modal-overlay"/>
             <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
             <div className="modal">
                 <div className="modal-header">
-                <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={props.hide}>
+                <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
-                <form onSubmit={props.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <p>Предмет</p>
                     <input
                         autoFocus
                         type="text"
-                        value={props.subject}
-                        onChange={props.subjectChange}
+                        value={subject}
+                        onChange={subjectChange}
                     />
                     <p>Кабинет</p>
                     <input
                         type="text"
-                        value={props.office}
-                        onChange={props.officeChange}
+                        value={office}
+                        onChange={officeChange}
                     />
                     <p>Преподаватель</p>
                     <input
                         type="text"
-                        value={props.teacher}
-                        onChange={props.teacherChange}
+                        value={teacher}
+                        onChange={teacherChange}
                     />
                     <button type="submit">Добавить</button>
                 </form>

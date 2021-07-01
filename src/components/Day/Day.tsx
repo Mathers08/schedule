@@ -3,18 +3,24 @@ import Modal from "../Modal/Modal";
 import useModal from '../Modal/useModal';
 import './Day.css';
 
+type Info = {
+    subject: string,
+    office: string,
+    teacher: string,
+}
+
 const Day = () => {
 
     const {isShowing, toggle} = useModal();
-    const [info, setInfo] = useState([]);
+    const [info, setInfo] = useState<Info[]>([]);
     const [subject, setSubject] = useState('---------');
     const [office, setOffice] = useState('---------');
     const [teacher, setTeacher] = useState('---------');
-    const subjectChange = e => setSubject(e.target.value);
-    const officeChange = e => setOffice(e.target.value);
-    const teacherChange = e => setTeacher(e.target.value);
+    const subjectChange = (e: any) => setSubject(e.target.value);
+    const officeChange = (e: any) => setOffice(e.target.value);
+    const teacherChange = (e: any) => setTeacher(e.target.value);
 
-    const handleSubmit = e => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         const newItem = {
             subject,
@@ -32,7 +38,10 @@ const Day = () => {
             <td onClick={toggle}>{subject}<br/>{office}<br/>{teacher}</td>
             { isShowing 
                 ? <Modal 
-                    isShowing={isShowing} 
+                    isShowing={isShowing}
+                    subject=""
+                    office=""
+                    teacher=""
                     hide={toggle} 
                     subjectChange={subjectChange}
                     officeChange={officeChange}
