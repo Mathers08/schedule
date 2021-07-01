@@ -1,0 +1,7 @@
+td {
+    text-align: center;
+    border-radius: 5px 25px;
+    padding: 10px 25px;
+    border: 3px outset white;
+    empty-cells: hide;
+}

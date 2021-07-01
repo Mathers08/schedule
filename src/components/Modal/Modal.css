@@ -57,6 +57,6 @@ button {
     margin-left: .5rem;
 }
 
-form p {
+form p, form button {
     margin: 10px;
 }
