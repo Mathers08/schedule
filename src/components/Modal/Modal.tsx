@@ -15,16 +15,16 @@ interface ModalProps {
 }
 
 const Modal = ({
-                 isShowing,
-                 subject,
-                 office,
-                 teacher,
-                 hide,
-                 subjectChange,
-                 officeChange,
-                 teacherChange,
-                 handleSubmit,
-               }: ModalProps) => {
+  isShowing,
+  subject,
+  office,
+  teacher,
+  hide,
+  subjectChange,
+  officeChange,
+  teacherChange,
+  handleSubmit,
+}: ModalProps) => {
   return createPortal(
     <React.Fragment>
       <div className="modal-overlay"/>
