@@ -1,15 +1,8 @@
-import Header from './components/Header/Header';
+import React from "react";
 import Table from './components/Table/Table';
 
 const App = () => {
-  return (
-    <table>
-      <tbody>
-      <Header/>
-      <Table/>
-      </tbody>
-    </table>
-  );
+  return <Table/>
 };
 
 export default App;

@@ -1,4 +1,5 @@
 import Day from '../Day/Day';
+import React from "react";
 
 const Week = () => {
   return (
