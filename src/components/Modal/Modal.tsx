@@ -14,17 +14,7 @@ interface ModalProps {
   handleSubmit: (v: any) => void,
 }
 
-const Modal = ({
-  isShowing,
-  subject,
-  office,
-  teacher,
-  hide,
-  subjectChange,
-  officeChange,
-  teacherChange,
-  handleSubmit,
-}: ModalProps) => {
+const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, teacherChange, handleSubmit}: ModalProps) => {
   return createPortal(
     <React.Fragment>
       <div className="modal-overlay"/>
@@ -36,30 +26,48 @@ const Modal = ({
             </button>
           </div>
           <form onSubmit={handleSubmit}>
-            <p>Предмет</p>
+            <h3>Предмет</h3>
             <input
               autoFocus
               type="text"
+              maxLength={16}
               value={subject}
               onChange={subjectChange}
             />
-            <p>Кабинет</p>
+            <h3>Кабинет</h3>
             <input
               type="text"
+              maxLength={16}
               value={office}
               onChange={officeChange}
             />
-            <p>Преподаватель</p>
+            <h3>Преподаватель</h3>
             <input
               type="text"
+              maxLength={16}
               value={teacher}
               onChange={teacherChange}
             />
-            <button type="submit">Добавить</button>
+            <div>
+              <h3>Выберите цвет</h3>
+              <div className="circle-picker">
+                <span>
+                  <div className="circle color color-lec"/>
+                </span>
+                <span>
+                  <div className="circle color color-pr"/>
+                </span>
+                <span>
+                  <div className="circle color color-lab"/>
+                </span>
+              </div>
+            </div>
+            <button className="modal-add-button" type="submit">Добавить</button>
           </form>
         </div>
       </div>
-    </React.Fragment>, document.body);
+    </React.Fragment>, document.body
+  );
 };
 
 export default Modal;
