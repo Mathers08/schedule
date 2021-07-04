@@ -29,7 +29,7 @@
   position: relative;
   margin: 10rem auto;
   border-radius: 20px;
-  max-width: 200px;
+  max-width: 300px;
   padding: 2rem;
 }
 
@@ -38,25 +38,54 @@
   justify-content: flex-end;
 }
 
-.modal-close-button {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  opacity: .3;
-  cursor: pointer;
-  border: none;
-}
-
 button {
   font-size: .9rem;
   font-weight: 700;
   border: none;
   border-radius: 3px;
   padding: .3rem 1rem;
-  margin-left: .5rem;
+  cursor: pointer;
 }
 
-form p, form button {
-  margin: 10px;
+.modal-close-button {
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
 }
+
+.modal-add-button {
+  margin: 20px 0 0 0;
+}
+
+.circle-picker {
+  display: flex;
+  justify-content: center;
+  margin-right: -14px;
+  margin-bottom: -14px;
+}
+
+.circle {
+  width: 28px;
+  height: 28px;
+  margin-right: 14px;
+  margin-bottom: 14px;
+}
+
+.color {
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border-radius: 50%;
+}
+
+.color-lec {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(88, 97, 226, 0.698));
+}
+.color-pr {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(55, 255, 0, 0.719));
+}
+.color-lab {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(230, 57, 57, 0.883));
+}
+
