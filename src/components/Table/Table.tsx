@@ -5,7 +5,7 @@ import React from "react";
 
 const Table = () => {
 
-  const timeRanges = [
+  const times = [
     '8:00 - 9:35',
     '9:45 - 11:20',
     '11:30 - 13:05',
@@ -21,9 +21,9 @@ const Table = () => {
         </thead>
         <tbody>
           {
-            timeRanges.map(t => (
-              <tr key={t}>
-                <th>{t}</th>
+            times.map(time => (
+              <tr key={time}>
+                <th>{time}</th>
                 <Week/>
               </tr>
             ))

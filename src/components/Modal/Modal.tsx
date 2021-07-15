@@ -1,6 +1,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import './Modal.scss';
+import useColor from './useColor';
 
 interface ModalProps {
   isShowing: boolean,
@@ -15,18 +16,21 @@ interface ModalProps {
 }
 
 const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, teacherChange, handleSubmit}: ModalProps) => {
+
+  const {color, onBlueCircleClick, onGreenCircleClick, onRedCircleClick} = useColor();
+
   return createPortal(
     <React.Fragment>
       <div className="modal-overlay"/>
       <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
-        <div className="modal">
+        <div className="modal" style={{background: color.modal}}>
           <div className="modal-header">
             <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <form onSubmit={handleSubmit}>
-            <h3>Предмет</h3>
+            <h3 style={{color: color.text}}>Предмет</h3>
             <input
               autoFocus
               type="text"
@@ -34,14 +38,14 @@ const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, tea
               value={subject}
               onChange={subjectChange}
             />
-            <h3>Кабинет</h3>
+            <h3 style={{color: color.text}}>Кабинет</h3>
             <input
               type="text"
               maxLength={16}
               value={office}
               onChange={officeChange}
             />
-            <h3>Преподаватель</h3>
+            <h3 style={{color: color.text}}>Преподаватель</h3>
             <input
               type="text"
               maxLength={16}
@@ -49,16 +53,16 @@ const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, tea
               onChange={teacherChange}
             />
             <div>
-              <h3>Выберите цвет</h3>
+              <h3 style={{color: color.text}}>Выберите цвет</h3>
               <div className="circle-picker">
                 <span>
-                  <div className="circle color color-lec"/>
+                  <div className="circle color color-lec" onClick={onBlueCircleClick}/>
                 </span>
                 <span>
-                  <div className="circle color color-pr"/>
+                  <div className="circle color color-pr" onClick={onGreenCircleClick}/>
                 </span>
                 <span>
-                  <div className="circle color color-lab"/>
+                  <div className="circle color color-lab" onClick={onRedCircleClick}/>
                 </span>
               </div>
             </div>

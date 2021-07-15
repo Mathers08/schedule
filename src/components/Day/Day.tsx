@@ -2,42 +2,40 @@ import React, { useState } from 'react';
 import Modal from '../Modal/Modal';
 import useModal from '../Modal/useModal';
 import './Day.scss';
+import '../Modal/Modal.scss';
 
 const Day = () => {
 
   const {isShowing, toggle} = useModal();
-  //const [info, setInfo] = useState([]);
-  const [subject, setSubject] = useState('');
-  const [office, setOffice] = useState('');
-  const [teacher, setTeacher] = useState('');
-  const subjectChange = (e: any) => setSubject(e.target.value);
-  const officeChange = (e: any) => setOffice(e.target.value);
-  const teacherChange = (e: any) => setTeacher(e.target.value);
+  const [data, setData] = useState({
+    subject: '',
+    office: '',
+    teacher: ''
+  })
+  const subjectChange = (e: any) => setData({ ...data, subject: e.target.value});
+  const officeChange = (e: any) => setData({ ...data, office: e.target.value});
+  const teacherChange = (e: any) => setData({ ...data, teacher: e.target.value});
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    /*const newItem = {
-      subject,
-      office,
-      teacher
-    };
-    setInfo([...info, newItem]);*/
-    setSubject(subject);
-    setOffice(office);
-    setTeacher(teacher);
+    setData({
+      subject: data.subject,
+      office: data.office,
+      teacher: data.teacher
+    });
     toggle();
   };
 
   return (
     <>
-      <td onClick={toggle}>{subject}<br/>{office}<br/>{teacher}</td>
+      <td onClick={toggle}>{data.subject}<br/>{data.office}<br/>{data.teacher}</td>
       {isShowing &&
         <Modal
           isShowing={isShowing}
           hide={toggle}
-          subject={subject}
-          office={office}
-          teacher={teacher}
+          subject={data.subject}
+          office={data.office}
+          teacher={data.teacher}
           subjectChange={subjectChange}
           officeChange={officeChange}
           teacherChange={teacherChange}

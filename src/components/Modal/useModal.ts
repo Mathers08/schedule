@@ -6,8 +6,7 @@ const useModal = () => {
   const toggle = () => setIsShowing(!isShowing);
 
   return {
-    isShowing,
-    toggle,
+    isShowing, toggle,
   };
 };
 

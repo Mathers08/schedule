@@ -4,12 +4,12 @@ import React from "react";
 const Week = () => {
   return (
     <>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
-      <Day/>
+      <Day />
+      <Day />
+      <Day />
+      <Day />
+      <Day />
+      <Day />
     </>
   );
 };
