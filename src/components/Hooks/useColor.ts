@@ -9,19 +9,13 @@ const useColor = () => {
     modal: '#fff',
     text: '#000',
     cell: '#000'
-  })
-  const onBlueCircleClick = () => {
-    setColor({modal: blue, text: '#fff', cell: blue});
-  };
-  const onGreenCircleClick = () => {
-    setColor({modal: green, text: '#fff', cell: green});
-  };
-  const onRedCircleClick = () => {
-    setColor({modal: red, text: '#fff', cell: red});
-  };
+  });
+  const onBlueCircleClick = () => setColor({modal: blue, text: '#fff', cell: blue});
+  const onGreenCircleClick = () => setColor({modal: green, text: '#fff', cell: green});
+  const onRedCircleClick = () => setColor({modal: red, text: '#fff', cell: red});
 
   return {
-    color, onBlueCircleClick, onGreenCircleClick, onRedCircleClick
+    color, setColor, onBlueCircleClick, onGreenCircleClick, onRedCircleClick
   };
 };
 

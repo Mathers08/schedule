@@ -20,14 +20,12 @@ const Table = () => {
           <Header/>
         </thead>
         <tbody>
-          {
-            times.map(time => (
-              <tr key={time}>
-                <th>{time}</th>
-                <Week/>
-              </tr>
-            ))
-          }
+          {times.map(time => (
+            <tr key={time}>
+              <th>{time}</th>
+              <Week/>
+            </tr>
+          ))}
         </tbody>
       </table>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { createPortal } from 'react-dom';
+import {createPortal} from 'react-dom';
 import './Modal.scss';
-import useColor from './useColor';
+import useColor from '../Hooks/useColor';
 
 interface ModalProps {
   isShowing: boolean,
@@ -15,7 +15,7 @@ interface ModalProps {
   handleSubmit: (v: any) => void,
 }
 
-const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, teacherChange, handleSubmit}: ModalProps) => {
+const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, teacherChange, handleSubmit}:ModalProps)  => {
 
   const {color, onBlueCircleClick, onGreenCircleClick, onRedCircleClick} = useColor();
 
@@ -56,13 +56,13 @@ const Modal = ({subject, office, teacher, hide, subjectChange, officeChange, tea
               <h3 style={{color: color.text}}>Выберите цвет</h3>
               <div className="circle-picker">
                 <span>
-                  <div className="circle color color-lec" onClick={onBlueCircleClick}/>
+                  <div className="circle color color-blue" onClick={onBlueCircleClick}/>
                 </span>
                 <span>
-                  <div className="circle color color-pr" onClick={onGreenCircleClick}/>
+                  <div className="circle color color-green" onClick={onGreenCircleClick}/>
                 </span>
                 <span>
-                  <div className="circle color color-lab" onClick={onRedCircleClick}/>
+                  <div className="circle color color-red" onClick={onRedCircleClick}/>
                 </span>
               </div>
             </div>

@@ -15,13 +15,11 @@ const Header = () => {
   return (
     <tr>
       <th className="group">ММИО</th>
-      {
-        days.map(day => (
-            <th key={day} className="days">
-              {day}
-            </th>
-        ))
-      }
+        {days.map(day => (
+          <th key={day} className="days">
+            {day}
+          </th>
+        ))}
     </tr>
   );
 };
